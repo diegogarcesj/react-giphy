@@ -5,6 +5,10 @@ class Gif extends Component {
     this.props.selectClick(this.props.id);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.id !== this.props.id;
+  }
+
   render() {
     const src = `https://media3.giphy.com/media/${this.props.id}/giphy.gif`;
     if (!this.props.id) {
